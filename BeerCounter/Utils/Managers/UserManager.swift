@@ -10,11 +10,11 @@ import Foundation
 
 class UserManager {
     
-    enum UserError: Error {
+    enum UserError: Error, LocalizedError {
         case wrongPassword
         case adminAlreadyLoggedIn
         
-        var localizedDescription: String {
+        var errorDescription: String? {
             switch self {
             case .adminAlreadyLoggedIn:
                 return "Admin user is already logged in"

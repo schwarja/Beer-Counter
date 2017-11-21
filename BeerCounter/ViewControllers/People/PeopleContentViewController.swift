@@ -76,7 +76,9 @@ class PeopleContentViewController: UITableViewController {
         if editingStyle == .delete {
             let person = privatePeople.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            deletePerson(person: person, sender: self)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+                self.deletePerson(person: person, sender: self)
+            })
         }
     }
 

@@ -37,8 +37,4 @@ extension UIResponder {
     @objc func toggleAdminLogin(sender: Any?) {
         coordinatingResponder?.toggleAdminLogin(sender: sender)
     }
-    
-    @objc func connectivityDataReceived(_ data: Data, sender: Any?) {
-        coordinatingResponder?.connectivityDataReceived(data, sender: sender)
-    }
 }
